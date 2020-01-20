@@ -1,0 +1,15 @@
+version: '2.4'
+
+services:
+  flask_app:
+    environment:
+      APP_ENV: local-dev
+      FLASK_ENV: development
+      FLASK_DEBUG: 1
+      WERKZEUG_DEBUG_PIN: 1234
+    build:
+      context: ./
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/usr/src/app
